@@ -1,0 +1,200 @@
+body {
+ background: #DDD url(../images/bgnew.jpg);
+ color: #666;
+ font-size:16px;
+}
+
+
+
+.square:nth-child(2n + 1) rect {
+  stroke: #fff;
+}
+.legend text ,.legend1 text ,.legend2 text 
+{
+ font-size:17px;
+ font-family:Georgia;
+}
+
+.title1 ,.title2
+{
+ font-size:17px;
+ font-family:Georgia;
+ font-weight:bold;
+ fill : #333;
+}
+
+
+.legend rect
+{
+ stroke-width: 1px;
+}
+
+.legend text
+{
+ color: #aaa;
+}
+.SeriesText {
+     font-size:18px;
+  font-family:Georgia;
+	font-weight:bold;
+    }
+.tooltip {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+  -moz-border-radius:5px;
+	border-radius: 5px;
+  border: 2px solid #000;
+	/* background: #222222; */
+  background: #fff;
+	opacity: .9;
+	/* color: #eeeeee; */
+  color: black;
+	padding: 10px;
+	width: 150px;
+	font-size: 14px;
+	z-index: 10;
+}
+
+.tooltip .title {
+	font-size: 13px;
+}
+
+.tooltip .name {
+  font-weight:bold;
+  font-size: 15px;
+}
+
+rect, text
+{
+ cursor: default;
+}
+
+
+#viz1 .small
+{
+ cursor: help;
+}
+
+#viz1 .legend
+{
+ cursor: pointer;
+}
+
+.modern {
+ fill-opacity:0.9;
+strock:10
+}
+
+
+h1 img {
+	float: left;
+	margin-right: 5px;
+}
+
+h1 {
+	line-height: 56px;
+}
+
+h1, h2 {
+	font-weight: normal;
+}
+
+.wrapper {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+	float:left;
+}
+
+#wrapper1{
+    width: 250px;
+	 margin: 0 auto;
+    position: relative;
+	float:left;
+	}
+	
+#wrapper2{
+    width: 320px;
+	 margin: 0 auto;
+    position: relative;
+	float:left;
+	}
+	
+	#wrapper3{
+    width: 200px;
+	 margin: 0 auto;
+    position: relative;
+	float:left;
+	}
+	
+.ads {
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+
+
+
+/*LAVALAMP START*/
+
+.lavalamp {
+    position: relative;
+    border: 1px solid #bbb;
+    background: #666;
+    padding:5px;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    border-radius : 10px;
+    -moz-border-radius : 10px;
+    -webkit-border-radius : 10px;
+    background : #666 -webkit-gradient(linear, left top, left bottom, from(rgb(175,175,175)), to(rgb(125,125,125)));
+    background : #666 -moz-gradient(linear, left top, left bottom, from(rgb(175,175,175)), to(rgb(125,125,125)));
+    height: 19px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #262626;
+    line-height: 20px;
+	font-weight:bold;
+	color:#eee;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    z-index: 300;
+    position: absolute;
+}
+
+ul li {
+    list-style: none;
+    float:left;
+
+    text-align: center;
+    }
+
+ul li a {
+    padding: 0 20px;
+    text-align: center;
+    }
+
+.floatr {
+    position: absolute;
+    top: 4px;
+    z-index: 50;
+    width: 70px;
+    height: 20px;
+    border-radius : 8px;
+    -moz-border-radius : 8px;
+    -webkit-border-radius : 8px;
+    background : rgba(255,255,255,.20);
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+}
+
+
+
