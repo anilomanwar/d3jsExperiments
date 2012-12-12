@@ -37,6 +37,7 @@ $(document).ready(function () {
             "width": width,
             "-webkit-transform": sictranslate,
 			"-ms-transform": sictranslate,
+			"-o-transform": sictranslate,
             "-moz-transform": sictranslate
         });
 
@@ -55,6 +56,7 @@ $(document).ready(function () {
             "width": width,
             "-webkit-transform": sictranslate,
 			"-ms-transform": sictranslate,
+			"-o-transform": sictranslate,
             "-moz-transform": sictranslate
             
         });
