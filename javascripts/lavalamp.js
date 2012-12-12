@@ -53,10 +53,12 @@ $(document).ready(function () {
         $(this).parent('ul').next('div.floatr').css({
             "width": width,
             "-webkit-transform": sictranslate,
+			"-ms-transform": sictranslate,
             "-moz-transform": sictranslate
             
         });
-        
+		
+		
     }).click(function(){
 	   $(this).siblings('li').removeClass('active');
 		$(this).addClass('active');
