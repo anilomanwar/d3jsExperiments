@@ -69,7 +69,7 @@ $(document).ready(function(){
 					calculate the distance to the bottom and fix the slideout to it.
 				*/
 				
-				console.log(tip.parent().height());
+			//	console.log(tip.parent().height());
 				tip.css({
 					bottom	: tip.parent().height()-(tip.position().top+tip.outerHeight()),
 					top		: 'auto'

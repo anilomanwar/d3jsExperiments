@@ -69,7 +69,7 @@ $(document).ready(function () {
 				  break;
 				  case "Theme":
 				  tindex=$(this).index();
-				  console.log(tindex);
+				  //console.log(tindex);
 				  reload2();
 				  break;
 				  case "Level":
@@ -77,7 +77,7 @@ $(document).ready(function () {
 				  configureLevel();
 				  break;
 		    }
-		console.log("----"+tindex);
+		//console.log("----"+tindex);
 		return false;
     });
 

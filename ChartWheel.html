@@ -63,8 +63,8 @@
 	</p>
     
     <p title="About Chart"  class="openTop openLeft blue" style="top:230px;left:750px;">
-	
-         <img style="width:250px;padding:10px; "> <span style="font-size:14px;color:#1078C7">While analyzing a business requirement, often the necessity is to zero out on few charts which would be best in the case.Evaluating all the charts repeatedly every time is tedious, so we prepared an index, illustrated by a concentric comparison chart, nicknamed chart wheel.</span></img>
+	<span style="font-size:14px;color:#1078C7">While analyzing a business requirement, often the necessity is to zero out on few charts which would be best in the case.Evaluating all the charts repeatedly every time is tedious, so we prepared an index, illustrated by a concentric comparison chart, nicknamed chart wheel.</span>
+         <img style="width:250px;padding:10px; " src="images/bkdummyimage.png"> </img>
 
           
 		  </p>
@@ -74,7 +74,7 @@
     </p>
 
 	  <p title="About Data" class="openTop openLeft black" style="top:530px;left:700px;">
-           <img style="width:250px;padding:10px; "> <span style="font-size:14px;color:#333">We have created a dummy data for displaying on chart , These values / rating are not real </span></img>
+          <span style="font-size:14px;color:#333">Data used in this Visusalization is dummy for the scenario. Overall rating given to each charting tool doesnot have any actual significance. However rating at individual attribute level is based on our understanding and useage of the tool.</span> <img style="width:250px;padding:10px;" src="images/bkdummyimage.png"> </img>
 	   </p>
 	
 	
@@ -109,7 +109,7 @@ var w = 760,
 var base=100,factor=25;
 	
 
-var colors1 =[["#7cb109","#01692c","#008b54","#01d9ff","#016fac","#535ca9","#d0281d ","#ff9934","#ec6c3f","#da2a50"],["#023467","#064c91","#175eac","#308dd0","#539fd9","#8fcaec","#010900","#2b3b17","#44583d","#6d7c21","#aaada6"],["#FFCC99","#FF9933","#FFCCCC","#FF99CC","#CC6699","#993366","#660033","#CC0099","#330033","#ff00ff"],["#9d5990","#214e77","#008c92","#44ab8c","#68ac59","#7eb44d","#d5c427","#f99c47","#ee796b","#f397a0"],["#15260f","#386728","#598d46","#a3c098","#a2e5d6","#9593e1","#5652cf","#2c27c3","#1a1775","#080727"]];
+var colors1 =[["#7cb109","#01692c","#008b54","#01d9ff","#016fac","#535ca9","#d0281d","#ff9934","#ec6c3f","#da2a50"],["#023467","#064c91","#175eac","#308dd0","#539fd9","#8fcaec","#010900","#2b3b17","#44583d","#6d7c21","#aaada6"],["#FFCC99","#FF9933","#FFCCCC","#FF99CC","#CC6699","#993366","#660033","#CC0099","#330033","#ff00ff"],["#9d5990","#214e77","#008c92","#44ab8c","#68ac59","#7eb44d","#d5c427","#f99c47","#ee796b","#f397a0"],["#15260f","#386728","#598d46","#a3c098","#a2e5d6","#9593e1","#5652cf","#2c27c3","#1a1775","#080727"]];
 var isColor2=[[9,4,4,5,9,8,7,8],[6,7,5,7,7,7,6,7],[8,7,3,8,7,7,6,8],[8,8,6,7,6,6,5,9],[7,7,4,8,8,4,8,8],[6,7,5,7,6,5,6,9],[4,5,7,5,6,5,9,6],[8,6,9,6,7,3,8,8],[7,8,8,7,6,3,8,8],[8,8,7,8,7,5,7,9]];
 var rings = [{radius: base+ factor * 1, width: 16, speed: 0,show : true,  name:"Portability"},{radius: base+ factor * 2, width: 16, speed: 0,show : true,  name:"Scalability"},{radius: base+ factor * 3, width: 16, speed: 0,show : true,  name:"Maturity"},  {radius: base+ factor * 4, width: 16, speed: 0,show : true,  name:"Extensibility"},  {radius: base+ factor * 5, width: 20, speed: 0,show : true,  name:"Customization"},{radius: base+ factor * 6, width: 20, speed: 0,show : true,  name:"Availability of Charts"},{radius: base+ factor * 7, width: 20, speed: 0,show : true,  name:"Documnatation"},  {radius: base+ factor * 8, width: 24, speed: 0,show : true,  name:"Look and Feel"},{radius: base+ factor * 9, width: 24, speed: 0,show : true,  name:"Usability"},{radius: base+ factor * 10, width: 24, speed: 0,show : true,  name:"Overall Score"}];
 
@@ -167,7 +167,7 @@ var legend = svg.selectAll(".legend")
       .attr("transform", function(d, i) { return "translate(20," + ((i * 24)-400) + ")"; })
 	  .on("click", function(d, i) {rings[i].show = !rings[i].show ; reload2()})
 	  .on("mouseout", function(d,i) { d3.select(this).style("fill","#666");})
-	  .on("mouseover", function(d,i) {d3.select(this).style("fill",colors1[getTindex()][i]); $("#1234").html(d.name); barchart(i)});
+	  .on("mouseover", function(d,i) { d3.select(this).style("fill",colors1[getTindex()][i]); barchart(i)}); //console.log(getTindex()+"-"+i+"-"+colors1[getTindex()][i]); 
 
   legend.append("rect")
       .attr("x", 158-w)
@@ -295,7 +295,7 @@ svg.append("svg:text")
 	  .style("stroke-width",2)
       .attr("width", function(d,i) {return 30 * isColor2[newdimx][i]})
       .attr("height", 18)
-      .style("fill", function(d,i) { return colors1[0][newdimx]; });
+      .style("fill", function(d,i) { return colors1[getTindex()][newdimx]; });
 
  bar1.append("text")
       .style("text-anchor", "middle")
@@ -319,7 +319,8 @@ svg.append("svg:text")
 }
 else
 {
-  svg.selectAll(".legend1 rect").transition().duration(500).attr("width", function(d,i) {return (30 * isColor2[newdimx][i])}).style("fill", function(d,i) { return colors1[getTindex()][newdimx]; });
+
+  svg.selectAll(".legend1 rect").transition().duration(500).attr("width", function(d,i) {return (30 * isColor2[newdimx][i])}).style("fill", function(d,i) { console.log(colors1[getTindex()][newdimx]); return colors1[getTindex()][newdimx]; });
   svg.selectAll(".legend1 .vals").transition().duration(500).attr("x", function(d,i) {return 30 * isColor2[newdimx][i] -90}).text(function(d,i) {  return isColor2[newdimx][i]; });
   svg.selectAll(".title1").text("Comparison of all Charts for: \" " +rings[newdimx].name+" \"");
 }
@@ -353,7 +354,7 @@ if(xyzb == null)
 		  .attr("ry",5)
 		  .style("stroke","#eee")
 		  .style("stroke-width",2)
-		  .style("fill", function(d,i) { return colors1[0][i]; })
+		  .style("fill", function(d,i) { return colors1[getTindex()][i]; })
 		  .attr("svg:title",function(d,i) { return isColor2[i][newdimx1]; });
 
 		  bar2.append("text")
@@ -406,9 +407,9 @@ d3.selectAll(".small").transition().duration(500).each
 		 d3.selectAll(".SeriesText").data(Series).style("fill", function(d,i) { return Series1[i]?"#222":"#aaa"});
 		 }
 	 );
-	 var ind=getTindex();
+	// var ind=getTindex();
 	//svg1.selectAll(".legend rect").transition().duration(500).each(function (d, i) {d3.select(this).style("fill", function(d,j) { return rings[i].show ? colors1[ind][i] : "#eee"; })});
-	svg.selectAll(".legend rect").transition().duration(500).style("fill", function(d,i) { return rings[i].show ? colors1[ind][i] : "#eee"; });
+	svg.selectAll(".legend rect").transition().duration(500).style("fill", function(d,i) { return rings[i].show ? colors1[getTindex()][i] : "#eee"; });
 	barchart(xyz);
 	barchart1(xyzb);
 }
