@@ -63,8 +63,9 @@
 	</p>
     
     <p title="About Chart"  class="openTop openLeft blue" style="top:230px;left:750px;">
+	<span style="font-size:16px;color:#1078C7;font-weight:bold;text-decoration:underline"> About Chart :</span> <br>
 	<span style="font-size:14px;color:#1078C7">While analyzing a business requirement, often the necessity is to zero out on few charts which would be best in the case.Evaluating all the charts repeatedly every time is tedious, so we prepared an index, illustrated by a concentric comparison chart, nicknamed chart wheel.</span>
-         <img style="width:250px;padding:10px; " src="images/bkdummyimage.png"> </img>
+         <img style="width:450px;padding:10px; " src="images/bkdummyimage.png"> </img>
 
           
 		  </p>
@@ -73,8 +74,22 @@
        <img src="images/15.png" class="spaceTop"  width="660" height="370" />
     </p>
 
-	  <p title="About Data" class="openTop openLeft black" style="top:530px;left:700px;">
-          <span style="font-size:14px;color:#333">Data used in this Visusalization is dummy for the scenario. Overall rating given to each charting tool doesnot have any actual significance. However rating at individual attribute level is based on our understanding and useage of the tool.</span> <img style="width:250px;padding:10px;" src="images/bkdummyimage.png"> </img>
+	  <p title="About Data & Plugins used" class="openTop openLeft black" style="top:530px;left:700px;">
+	      <span style="font-size:16px;color:#000;font-weight:bold;text-decoration:underline"> About Data :</span> <br>
+          <span style="font-size:14px;color:#333">Data used in this Visusalization is dummy for the scenario. Overall rating given to each charting tool doesnot have any actual significance. However rating at individual attribute level is based on our understanding and useage of the tool.</span> 
+			<br><br>
+			
+			 <span style="font-size:16px;color:#000;font-weight:bold;text-decoration:underline"> Tools Used :</span> <br>
+          <span style="font-size:14px;color:#333"> 1. <a style="font-size:14px;color:#333" href ="http://d3js.org/"> D3Js </a> - for creating visualisation I have used d3js libarary </span> <br>
+
+		  	<br><br>
+			
+		  <span style="font-size:16px;color:#000;font-weight:bold;text-decoration:underline"> Plugins Used :</span> <br>
+          <span style="font-size:14px;color:#333"> 1. <a style="font-size:14px;color:#333" href ="http://bl.ocks.org/1020902"> D3Js  Superformula</a> - for shape changeing </span> <br>
+		  <span style="font-size:14px;color:#333"> 2. <a style="font-size:14px;color:#333" href ="http://demo.tutorialzine.com/2010/04/slideout-context-tips-jquery-css3/demo.html" >Jquery Slideout </a>- for showing cotextual help for chart </span> <br>
+		  <span style="font-size:14px;color:#333"> 3. <a style="font-size:14px;color:#333" href ="http://www.devthought.com/2007/01/29/cssjavascript-true-power-fancy-menu/" >Jquery Menu </a>- for selecting the shape and theme for chart </span> <br>
+
+		  <img style="width:450px;padding:10px;" src="images/bkdummyimage.png"> </img>
 	   </p>
 	
 	
@@ -320,7 +335,7 @@ svg.append("svg:text")
 else
 {
 
-  svg.selectAll(".legend1 rect").transition().duration(500).attr("width", function(d,i) {return (30 * isColor2[newdimx][i])}).style("fill", function(d,i) { console.log(colors1[getTindex()][newdimx]); return colors1[getTindex()][newdimx]; });
+  svg.selectAll(".legend1 rect").transition().duration(500).attr("width", function(d,i) {return (30 * isColor2[newdimx][i])}).style("fill", function(d,i) { return colors1[getTindex()][newdimx]; });
   svg.selectAll(".legend1 .vals").transition().duration(500).attr("x", function(d,i) {return 30 * isColor2[newdimx][i] -90}).text(function(d,i) {  return isColor2[newdimx][i]; });
   svg.selectAll(".title1").text("Comparison of all Charts for: \" " +rings[newdimx].name+" \"");
 }
@@ -389,8 +404,7 @@ if(xyzb == null)
 
 function reload1()
 {
-d3.selectAll(".small").transition().duration(500).each(function (d, i) { small.size((d.width/10 + d.radius)*0.3).type(getShape()); d3.select(this).attr("d", small);
-		 }
+d3.selectAll(".small").each(function (d, i) { small.size((d.width/10 + d.radius)*0.3).type(getShape()); d3.select(this).attr("d", small);}
 	 );
 	 
 	 
@@ -398,12 +412,12 @@ d3.selectAll(".small").transition().duration(500).each(function (d, i) { small.s
 
 function reload2()
 {
-d3.selectAll(".small").transition().duration(500).each
+d3.selectAll(".small").each
 	 ( 
 		 function (d, i) 
 		 {
 		 var clr=  rings[d.colori].show && d3.select(this).attr("ab")==1 && Series1[d3.select(this).attr("dimx")] ? colors1[getTindex()][d.colori] :bkColor;
-		 d3.select(this).attr("fill", clr);
+		 d3.select(this).transition().duration(500).attr("fill", clr);
 		 d3.selectAll(".SeriesText").data(Series).style("fill", function(d,i) { return Series1[i]?"#222":"#aaa"});
 		 }
 	 );
