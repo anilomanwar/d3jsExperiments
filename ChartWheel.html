@@ -434,7 +434,7 @@ d3.selectAll(".small").each
 	<div id="example2">
 		 <span style ="font-size:13px;"> Best View : Chrome & Firefox  </a></span>
   <div id="example3">
-  <div id="shareme" data-url="http://anilomanwar.github.com/d3jsExperiments/" data-text="Make your sharing widget with Sharrre (jQuery Plugin)" data-title="share this page"></div>
+  <div id="shareme" data-url="http://anilomanwar.github.com/d3jsExperiments/" data-text="Chart Wheel using D3Js" data-title="share this page"></div>
 </div>
 <script>
 $('#shareme').sharrre({
@@ -442,16 +442,14 @@ $('#shareme').sharrre({
     googlePlus: true,
     facebook: true,
     twitter: true,
-    digg: false,
-    delicious: false
+    linkedin: true
   },
   enableTracking: true,
   buttons: {
     googlePlus: {size: 'tall'},
     facebook: {layout: 'box_count'},
     twitter: {count: 'vertical'},
-    digg: {type: 'DiggMedium'},
-    delicious: {size: 'tall'}
+    linkedin: {type: 'DiggMedium'}
   },
   hover: function(api, options){
     $(api.element).find('.buttons').show();
