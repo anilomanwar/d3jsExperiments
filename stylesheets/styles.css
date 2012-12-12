@@ -73,7 +73,7 @@ Three color themes
 	/* The plus icon */
 	width:11px;
 	height:11px;
-	background:url('http://pasteboard.co/1u7Fm55J.gif') no-repeat center center;
+	background:url('../images/plus.gif') no-repeat center center;
 	margin:3px;
 	
 	/* Defining a CSS3 animation. Currently only works in Chrome and Safari */
